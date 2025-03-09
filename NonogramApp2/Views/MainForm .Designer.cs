@@ -69,7 +69,7 @@ namespace NonogramApp
             // loginButton
             // 
             this.loginButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.loginButton.Location = new System.Drawing.Point(576, 70);
+            this.loginButton.Location = new System.Drawing.Point(374, 70);
             this.loginButton.Margin = new System.Windows.Forms.Padding(2);
             this.loginButton.Name = "loginButton";
             this.loginButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -81,7 +81,7 @@ namespace NonogramApp
             // registerButton
             // 
             this.registerButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.registerButton.Location = new System.Drawing.Point(703, 70);
+            this.registerButton.Location = new System.Drawing.Point(501, 70);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(100, 30);
             this.registerButton.TabIndex = 3;
@@ -101,7 +101,7 @@ namespace NonogramApp
             this.btnStartGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnStartGame.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartGame.Location = new System.Drawing.Point(380, 511);
+            this.btnStartGame.Location = new System.Drawing.Point(279, 511);
             this.btnStartGame.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(211, 40);
@@ -114,7 +114,7 @@ namespace NonogramApp
             // 
             this.logoutButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.logoutButton.Enabled = false;
-            this.logoutButton.Location = new System.Drawing.Point(830, 70);
+            this.logoutButton.Location = new System.Drawing.Point(628, 70);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(100, 30);
             this.logoutButton.TabIndex = 6;
@@ -126,7 +126,7 @@ namespace NonogramApp
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(246, 189);
+            this.pictureBox1.Location = new System.Drawing.Point(145, 189);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(2080, 1024);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(512, 215);
@@ -185,7 +185,7 @@ namespace NonogramApp
             this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(2080, 46);
             this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(776, 46);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(974, 46);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 46);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -194,7 +194,7 @@ namespace NonogramApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(974, 573);
+            this.ClientSize = new System.Drawing.Size(772, 573);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.welcomeLabel);
