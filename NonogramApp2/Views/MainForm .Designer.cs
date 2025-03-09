@@ -23,8 +23,8 @@ namespace NonogramApp
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.Button button2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
@@ -41,10 +41,24 @@ namespace NonogramApp
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // button2
+            // 
+            button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            button2.AutoSize = true;
+            button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            button2.Location = new System.Drawing.Point(311, 3);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(67, 30);
+            button2.TabIndex = 3;
+            button2.Text = "Profile";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // welcomeLabel
             // 
             this.welcomeLabel.AutoSize = true;
-            this.welcomeLabel.Location = new System.Drawing.Point(-1, 70);
+            this.welcomeLabel.Location = new System.Drawing.Point(-3, 52);
             this.welcomeLabel.Name = "welcomeLabel";
             this.welcomeLabel.Size = new System.Drawing.Size(337, 48);
             this.welcomeLabel.TabIndex = 1;
@@ -55,7 +69,7 @@ namespace NonogramApp
             // loginButton
             // 
             this.loginButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.loginButton.Location = new System.Drawing.Point(568, 70);
+            this.loginButton.Location = new System.Drawing.Point(576, 70);
             this.loginButton.Margin = new System.Windows.Forms.Padding(2);
             this.loginButton.Name = "loginButton";
             this.loginButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -67,7 +81,7 @@ namespace NonogramApp
             // registerButton
             // 
             this.registerButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.registerButton.Location = new System.Drawing.Point(673, 70);
+            this.registerButton.Location = new System.Drawing.Point(703, 70);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(100, 30);
             this.registerButton.TabIndex = 3;
@@ -86,10 +100,11 @@ namespace NonogramApp
             // 
             this.btnStartGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnStartGame.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnStartGame.Location = new System.Drawing.Point(482, 505);
+            this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartGame.Location = new System.Drawing.Point(380, 511);
             this.btnStartGame.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.btnStartGame.Name = "btnStartGame";
-            this.btnStartGame.Size = new System.Drawing.Size(150, 40);
+            this.btnStartGame.Size = new System.Drawing.Size(211, 40);
             this.btnStartGame.TabIndex = 5;
             this.btnStartGame.Text = "Speel Nu";
             this.btnStartGame.UseVisualStyleBackColor = false;
@@ -99,7 +114,7 @@ namespace NonogramApp
             // 
             this.logoutButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.logoutButton.Enabled = false;
-            this.logoutButton.Location = new System.Drawing.Point(782, 70);
+            this.logoutButton.Location = new System.Drawing.Point(830, 70);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(100, 30);
             this.logoutButton.TabIndex = 6;
@@ -111,26 +126,12 @@ namespace NonogramApp
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(349, 189);
+            this.pictureBox1.Location = new System.Drawing.Point(246, 189);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(2080, 1024);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(405, 223);
+            this.pictureBox1.Size = new System.Drawing.Size(512, 215);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            button2.AutoSize = true;
-            button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            button2.Location = new System.Drawing.Point(354, 3);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(67, 30);
-            button2.TabIndex = 3;
-            button2.Text = "Profile";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -141,7 +142,7 @@ namespace NonogramApp
             this.button1.Location = new System.Drawing.Point(222, 3);
             this.button1.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 33);
+            this.button1.Size = new System.Drawing.Size(66, 33);
             this.button1.TabIndex = 2;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;
@@ -184,7 +185,7 @@ namespace NonogramApp
             this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(2080, 46);
             this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(776, 46);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1114, 46);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(974, 46);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -193,7 +194,7 @@ namespace NonogramApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1114, 573);
+            this.ClientSize = new System.Drawing.Size(974, 573);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.welcomeLabel);
@@ -203,7 +204,7 @@ namespace NonogramApp
             this.Controls.Add(this.btnStartGame);
             this.Controls.Add(this.logoutButton);
             this.MaximumSize = new System.Drawing.Size(2080, 1024);
-            this.MinimumSize = new System.Drawing.Size(1132, 620);
+            this.MinimumSize = new System.Drawing.Size(790, 620);
             this.Name = "MainForm";
             this.Text = "Nonogram Applicatie";
             this.Load += new System.EventHandler(this.MainForm_Load);
