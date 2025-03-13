@@ -15,13 +15,6 @@ namespace NonogramApp.Views
             InitializeComponent();
         }
 
-        // Laadfunctie, hier kun je initialisatiecode toevoegen
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-            // Eventuele initialisatiecode hier
-        }
-
-        // Verwerkt de registratie van de gebruiker
         private void BtnRegister_Click(object sender, EventArgs e)
         {
             // Haal de waarden op uit de tekstvakken
