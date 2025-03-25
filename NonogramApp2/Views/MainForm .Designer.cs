@@ -1,16 +1,18 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace NonogramApp
 {
     partial class MainForm
     {
         private System.ComponentModel.IContainer components = null;
-        private Label welcomeLabel;
         private Button loginButton;
         private Button registerButton;
-        private Label popularLabel;
         private Button btnStartGame;
-        private Button logoutButton; // Uitloggen knop
+        private Label welcomeLabel;
+        private PictureBox pictureBox1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanel1;
 
         protected override void Dispose(bool disposing)
         {
@@ -23,202 +25,136 @@ namespace NonogramApp
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button2;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
-            this.popularLabel = new System.Windows.Forms.Label();
             this.btnStartGame = new System.Windows.Forms.Button();
-            this.logoutButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            button2 = new System.Windows.Forms.Button();
+            this.logoutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
-            // 
-            button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            button2.AutoSize = true;
-            button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            button2.Location = new System.Drawing.Point(311, 3);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(67, 30);
-            button2.TabIndex = 3;
-            button2.Text = "Profile";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // welcomeLabel
             // 
+            this.welcomeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.welcomeLabel.AutoSize = true;
-            this.welcomeLabel.Location = new System.Drawing.Point(-3, 52);
+            this.welcomeLabel.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
+            this.welcomeLabel.Location = new System.Drawing.Point(3, 60);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(337, 48);
+            this.welcomeLabel.Size = new System.Drawing.Size(794, 32);
             this.welcomeLabel.TabIndex = 1;
-            this.welcomeLabel.Text = "Welkom bij de Nonogram Applicatie\n\nSpeel uitdagende puzzels en verbeter je vaardi" +
-    "gheden!";
+            this.welcomeLabel.Text = "Welkom bij de Nonogram Applicatie!";
             this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loginButton
             // 
-            this.loginButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.loginButton.Location = new System.Drawing.Point(374, 70);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(2);
+            this.loginButton.Location = new System.Drawing.Point(309, 13);
             this.loginButton.Name = "loginButton";
-            this.loginButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.loginButton.Size = new System.Drawing.Size(100, 30);
-            this.loginButton.TabIndex = 2;
+            this.loginButton.Size = new System.Drawing.Size(150, 40);
+            this.loginButton.TabIndex = 0;
             this.loginButton.Text = "Inloggen";
             this.loginButton.Click += new System.EventHandler(this.Login_Click);
             // 
             // registerButton
             // 
-            this.registerButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.registerButton.Location = new System.Drawing.Point(501, 70);
+            this.registerButton.Location = new System.Drawing.Point(465, 13);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(100, 30);
-            this.registerButton.TabIndex = 3;
+            this.registerButton.Size = new System.Drawing.Size(150, 40);
+            this.registerButton.TabIndex = 1;
             this.registerButton.Text = "Registreren";
             this.registerButton.Click += new System.EventHandler(this.Register_Click);
             // 
-            // popularLabel
-            // 
-            this.popularLabel.Location = new System.Drawing.Point(20, 143);
-            this.popularLabel.Name = "popularLabel";
-            this.popularLabel.Size = new System.Drawing.Size(200, 30);
-            this.popularLabel.TabIndex = 4;
-            this.popularLabel.Text = "Populaire Puzzels";
-            // 
             // btnStartGame
             // 
-            this.btnStartGame.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnStartGame.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartGame.Location = new System.Drawing.Point(279, 511);
-            this.btnStartGame.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.btnStartGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStartGame.Location = new System.Drawing.Point(3, 267);
             this.btnStartGame.Name = "btnStartGame";
-            this.btnStartGame.Size = new System.Drawing.Size(211, 40);
-            this.btnStartGame.TabIndex = 5;
+            this.btnStartGame.Size = new System.Drawing.Size(794, 40);
+            this.btnStartGame.TabIndex = 3;
             this.btnStartGame.Text = "Speel Nu";
-            this.btnStartGame.UseVisualStyleBackColor = false;
             this.btnStartGame.Click += new System.EventHandler(this.BtnStartGame_Click);
-            // 
-            // logoutButton
-            // 
-            this.logoutButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.logoutButton.Enabled = false;
-            this.logoutButton.Location = new System.Drawing.Point(628, 70);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(100, 30);
-            this.logoutButton.TabIndex = 6;
-            this.logoutButton.Text = "Uitloggen";
-            this.logoutButton.Click += new System.EventHandler(this.Logout_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(145, 189);
-            this.pictureBox1.MaximumSize = new System.Drawing.Size(2080, 1024);
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.ImageLocation = "https://puzzlygame.com/static/img/eagle.png";
+            this.pictureBox1.Location = new System.Drawing.Point(3, 123);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(512, 215);
-            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.Size = new System.Drawing.Size(794, 138);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // tableLayoutPanel1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.AutoSize = true;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button1.Location = new System.Drawing.Point(222, 3);
-            this.button1.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 33);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Home";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoEllipsis = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 8);
-            this.label2.Margin = new System.Windows.Forms.Padding(1, 8, 0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 22);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nonogram Applicatie";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
-            this.label1.TabIndex = 0;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.welcomeLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnStartGame, 0, 3);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 600);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(button2);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(2080, 46);
-            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(776, 46);
+            this.flowLayoutPanel1.Controls.Add(this.logoutButton);
+            this.flowLayoutPanel1.Controls.Add(this.registerButton);
+            this.flowLayoutPanel1.Controls.Add(this.loginButton);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 46);
-            this.flowLayoutPanel1.TabIndex = 1;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(794, 54);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.logoutButton.Location = new System.Drawing.Point(621, 13);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.logoutButton.Size = new System.Drawing.Size(150, 40);
+            this.logoutButton.TabIndex = 5;
+            this.logoutButton.Text = "Uitloggen";
             // 
             // MainForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(772, 573);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.welcomeLabel);
-            this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.registerButton);
-            this.Controls.Add(this.popularLabel);
-            this.Controls.Add(this.btnStartGame);
-            this.Controls.Add(this.logoutButton);
-            this.MaximumSize = new System.Drawing.Size(2080, 1024);
-            this.MinimumSize = new System.Drawing.Size(790, 620);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainForm";
-            this.Text = "Nonogram Applicatie";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Text = "Nonogram App";
+            this.Load += new System.EventHandler(this.MainForm_Load_1);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
-        private PictureBox pictureBox1;
-        private Button button1;
-        private Label label2;
-        private Label label1;
-        private FlowLayoutPanel flowLayoutPanel1;
+
+        private Button logoutButton;
+
+        // Voeg een Resize event toe zodat we de layout kunnen bijwerken als het formaat van het venster verandert
+
     }
 }
