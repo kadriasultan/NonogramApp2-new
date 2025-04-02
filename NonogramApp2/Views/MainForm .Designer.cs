@@ -73,11 +73,14 @@ namespace NonogramApp
             // 
             this.btnStartGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStartGame.BackColor = System.Drawing.Color.Blue;
+            this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartGame.Location = new System.Drawing.Point(3, 267);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(794, 40);
             this.btnStartGame.TabIndex = 3;
             this.btnStartGame.Text = "Speel Nu";
+            this.btnStartGame.UseVisualStyleBackColor = false;
             this.btnStartGame.Click += new System.EventHandler(this.BtnStartGame_Click);
             // 
             // pictureBox1
@@ -97,9 +100,9 @@ namespace NonogramApp
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.welcomeLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnStartGame, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.welcomeLabel, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";

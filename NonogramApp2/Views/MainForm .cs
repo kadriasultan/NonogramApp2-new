@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace NonogramApp
@@ -40,43 +41,59 @@ namespace NonogramApp
 
         private void ApplyStyles()
         {
-            // Achtergrondkleur met gradient
-            this.BackColor = Color.FromArgb(240, 240, 240); // Lichtgrijs
-            this.FormBorderStyle = FormBorderStyle.Sizable;
-            this.StartPosition = FormStartPosition.CenterScreen;
-
-            // Algemeen uiterlijk van knoppen
-            foreach (var btn in new Button[] { btnStartGame, loginButton, registerButton, logoutButton })
+            // Basisstijl voor alle knoppen (behoudt bestaande grootte en positie)
+            Action<Button, Color, Color, int> styleButton = (btn, bgColor, hoverColor, borderRadius) =>
             {
-                btn.BackColor = Color.FromArgb(52, 152, 219); // Blauw
-                btn.ForeColor = Color.White;
-                btn.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                // Behoud bestaande grootte en positie
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
-                btn.Height = 50;
-                btn.Width = this.ClientSize.Width / 3 - 20; // Breedte past zich aan bij formaat van het scherm
-                btn.Margin = new Padding(10);
-                btn.Padding = new Padding(10);
-                btn.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right; // Zorgt ervoor dat knoppen zich aanpassen
+                btn.BackColor = bgColor;
+                btn.ForeColor = Color.White;
+                btn.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                btn.Cursor = Cursors.Hand;
 
-                // Hover-effect
-                btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(41, 128, 185); // Donkerder blauw
+                // Subtiel hover-effect (donkerder versie van hoofdkleur)
+                btn.FlatAppearance.MouseOverBackColor = hoverColor;
+                btn.FlatAppearance.MouseDownBackColor = ControlPaint.Dark(hoverColor, 0.2f);
 
-                // Ronde hoeken voor knoppen
-                btn.Region = new Region(CreateRoundedRectangle(btn.ClientRectangle, 20));
+                // Behoud bestaande afmetingen
+                btn.Height = 46; // Subtiele hoogte-aanpassing voor betere proporties
+                btn.Width = Math.Max(160, btn.Width); // Minimale breedte
+
+                // Verfijnde ronde hoeken (iets subtieler dan voorheen)
+                btn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn.Width, btn.Height, borderRadius, borderRadius));
+            };
+
+            // Licht aangepast kleurenschema (iets verzadigder)
+            Color primaryBlue = Color.FromArgb(0, 122, 204);
+            Color hoverBlue = Color.FromArgb(0, 96, 180);
+            Color accentColor = Color.FromArgb(255, 140, 0);
+            Color hoverAccent = Color.FromArgb(230, 120, 0);
+            Color dangerRed = Color.FromArgb(220, 60, 60);
+            Color hoverRed = Color.FromArgb(190, 50, 50);
+
+            // Pas stijlen toe met subtiele aanpassingen
+            styleButton(btnStartGame, accentColor, hoverAccent, 8);
+            styleButton(loginButton, primaryBlue, hoverBlue, 8);
+            styleButton(registerButton, Color.FromArgb(80, 80, 80), Color.FromArgb(60, 60, 60), 8);
+            styleButton(logoutButton, dangerRed, hoverRed, 8);
+
+            // Text padding aanpassing voor betere balans
+            foreach (var btn in new[] { btnStartGame, loginButton, registerButton, logoutButton })
+            {
+                btn.Padding = new Padding(8, 4, 8, 4);
             }
 
-            // Logout knop met een andere kleur
-            logoutButton.BackColor = Color.FromArgb(231, 76, 60); // Rood
-
-            // Welkomstlabel stijlen
-            welcomeLabel.Font = new Font("Segoe UI", 24, FontStyle.Bold);
-            welcomeLabel.ForeColor = Color.FromArgb(44, 62, 80); // Donkerblauw
-            welcomeLabel.TextAlign = ContentAlignment.MiddleCenter;
-            welcomeLabel.Margin = new Padding(20);
-            welcomeLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            // Label stijl verfijning (subtiele aanpassing)
+            welcomeLabel.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            welcomeLabel.ForeColor = Color.Black;
         }
 
+        // Ondersteunende methode voor ronde hoeken (efficiëntere versie)
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect, int nTopRect, int nRightRect, int nBottomRect,
+            int nWidthEllipse, int nHeightEllipse);
         private void MainForm_Resize(object sender, EventArgs e)
         {
             // Aanpassen van knoppenbreedte bij resizing van het form
